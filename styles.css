@@ -1,16 +1,73 @@
 /* Box Model Fix */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 body {
     background: #E1D4C9;
     min-height: 100vh;
     font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    --text-dark: #403F3D;
 }
 
 .container {
     max-width: 85rem;
+    margin: 0 auto;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    padding-top: 1.2rem;
+}
+
+header .logo {
+    width: 6.25rem;
+    height: 3.75rem;
+}
+
+header>nav>ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2.6rem;
+    justify-content: center;
+    margin-top: -6px;
+    margin-left: 1.75rem;
+    letter-spacing: 0.12px;
+}
+
+header>nav>ul>li>a, .menu_button {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-bottom: transparent 2px solid;
+    padding-bottom: 4px;
+}
+
+.menu_button img{
+    margin-left: 0.275rem;
+}
+
+header>nav>ul>li>a:hover {
+    border-bottom: #403F3D 2px solid;
+}
+
+header>nav>ul>li:last-of-type {
+    grid-column: 3;
+}
+
+.menu_button {
+    justify-self: end;
 }
