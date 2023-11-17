@@ -50,7 +50,8 @@ header>nav>ul {
     margin-left: 1.75rem;
 }
 
-header>nav>ul>li>a, .menu_button {
+header>nav>ul>li>a,
+.menu_button {
     font-size: 1rem;
     font-style: normal;
     font-weight: 600;
@@ -62,11 +63,12 @@ header>nav>ul>li>a, .menu_button {
     transition: 300ms;
 }
 
-.menu_button img{
+.menu_button img {
     margin-left: 0.275rem;
 }
 
-header>nav>ul>li>a:hover, .menu_button:hover {
+header>nav>ul>li>a:hover,
+.menu_button:hover {
     border-bottom: #403F3D 0.125rem solid;
 }
 
@@ -87,4 +89,11 @@ h2>span {
     color: var(--text-accent, #B0907A);
     font-style: italic;
 
+}
+
+footer.container {
+    height: 450px;
+    border-radius: 40px;
+    background: var(--background-container, #665F55);
+    margin-bottom: 40px;
 }

@@ -169,5 +169,48 @@
 }
 
 .about {
-    margin-top: 100px;
+    margin-top: 96px;
+    text-align: left;
+}
+
+.about > h2 {
+    text-align: left;
+}
+
+.about > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 40px;
+    margin-top: 2.45rem;
+    max-width: 100%;
+}
+
+.about > div > img {
+    width: 660px;
+    border-radius: 20px;
+    object-position: center center;
+}
+
+.about > div > img:nth-of-type(2), .about > div > img:nth-of-type(3)  {
+    aspect-ratio: 1.535;
+    object-fit: cover;
+}
+
+.about > div > img:nth-of-type(1), .about > div > img:nth-of-type(4)  {
+    aspect-ratio: 1.119;
+    object-fit: cover;
+}
+
+.about > div > img:nth-of-type(1) {
+    grid-row: 1/3;
+}
+
+.about > div > img:nth-of-type(4) {
+    grid-row: 2/4;
+}
+
+.mobile_app {
+    margin-top: 96px;
+    height: 500px;
 }
