@@ -51,6 +51,105 @@
     line-height: 150%;
 }
 
-.enjoy a:hover {
+.enjoy a:hover {}
 
+
+.favourite_coffees {
+    margin-top: 6.25rem;
+    display: grid;
+    grid-template-columns: 3.75rem 4fr 3.75rem;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.82rem;
+    margin-inline: 0.2rem;
+}
+
+.favourite_coffees>h2 {
+    color: var(--text-dark, #403F3D);
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+    grid-column: 1/4;
+}
+
+.favourite_coffees>h2>span {
+    color: var(--text-accent, #B0907A);
+    font-style: italic;
+}
+
+.favourite_coffees>button{
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--border-dark, #665F55);
+    width: 3.75rem;
+    aspect-ratio: 1;
+    background-position: center center;
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    transition: all 200ms;
+}
+
+.favourite_coffees>button.left {
+    background-image: url(../img/arrow-left.svg);
+}
+
+.favourite_coffees>button.left:hover {
+    background-color: var(--background-container, #665F55);
+    background-image: url(../img/arrow-left-hovered.svg);
+}
+
+.favourite_coffees>button.right {
+    background-image: url(../img/arrow-right.svg);
+}
+
+.favourite_coffees>button.right:hover {
+    background-color: var(--background-container, #665F55);
+    background-image: url(../img/arrow-right-hovered.svg);
+}
+
+.favourite_coffees>button{
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--border-dark, #665F55);
+    width: 3.75rem;
+    aspect-ratio: 1;
+    margin-top: -0.5rem;
+}
+
+.favourite_coffees>article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    height: 40rem;
+    justify-self: center;
+    max-width: 45ch;
+    text-align: center;
+}
+
+.favourite_coffees>article>img {
+    height: 30rem;
+}
+
+.favourite_coffees>article>h3 {
+    color: var(--text-dark, #403F3D);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 125%;
+}
+
+.favourite_coffees>article>p {
+    color: var(--text-dark, #403F3D);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.favourite_coffees>article>p:last-of-type {
+    color: var(--text-dark, #403F3D);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 125%;
 }

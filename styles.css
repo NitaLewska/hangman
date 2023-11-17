@@ -35,6 +35,10 @@ header .logo {
     height: 3.75rem;
 }
 
+header a:first-of-type {
+    width: 6.25rem;
+}
+
 header>nav>ul {
     display: flex;
     flex-direction: row;
