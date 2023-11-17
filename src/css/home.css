@@ -1,20 +1,56 @@
-.enjoy_coffee {
-    background: url(/src/img/img-hero.jpg), lightgray 50% / cover no-repeat;
+.enjoy {
+    background: url(../img/img-hero.jpg), lightgray 50% / cover no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 644px;
+    height: 40.25rem;
     margin-top: 1rem;
-    border-radius: 40px;
-    padding-top: 6.4rem;
+    border-radius: 2.5rem;
+    padding-top: 6.3rem;
     padding-left: 6.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
-.enjoy_coffee h1 {
+.enjoy h1 {
+    color: var(--text-light, #E1D4C9);
     font-size: 4.5rem;
-    font-style: normal;
     font-weight: 600;
     line-height: 105%;
-    color: var(--text-light, #E1D4C9);
     max-width: 15ch;
-    letter-spacing: 0px;
+}
+
+.enjoy h1>span {
+    color: var(--text-accent, #B0907A);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 105%;
+    letter-spacing: 0.03125rem;
+}
+
+
+.enjoy h1+p {
+    color: var(--text-light, #E1D4C9);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    max-width: 55ch;
+}
+
+.enjoy a {
+    display: flex;
+    width: 12.5rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: var(--background-body, #E1D4C9);
+    color: var(--text-dark, #403F3D);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.enjoy a:hover {
+
 }
