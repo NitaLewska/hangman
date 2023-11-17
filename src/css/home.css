@@ -49,6 +49,7 @@
     font-size: 1rem;
     font-weight: 600;
     line-height: 150%;
+    cursor: pointer;
 }
 
 .enjoy a:hover {}
@@ -78,7 +79,7 @@
     font-style: italic;
 }
 
-.favourite_coffees>button{
+.favourite_coffees>button {
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid var(--border-dark, #665F55);
@@ -108,13 +109,14 @@
     background-image: url(../img/arrow-right-hovered.svg);
 }
 
-.favourite_coffees>button{
+.favourite_coffees>button {
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid var(--border-dark, #665F55);
     width: 3.75rem;
     aspect-ratio: 1;
     margin-top: -0.5rem;
+    cursor: pointer;
 }
 
 .favourite_coffees>article {
@@ -152,4 +154,30 @@
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 125%;
+}
+
+.favourite_coffees>div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    grid-column: 2/3;
+    justify-content: center;
+    margin-top: -1rem;
+}
+
+.favourite_coffees>div>button {
+    width: 40px;
+    height: 4px;
+    border-radius: 100px;
+    background: var(--border-light, #C1B6AD);
+    border: none;
+    cursor: pointer;
+}
+
+.favourite_coffees>div>button.active {
+    background: var(--border-dark, #665F55);
+}
+
+.about {
+    margin-top: 100px;
 }
