@@ -58,6 +58,7 @@ header>nav>ul>li>a, .menu_button {
     color: var(--text-dark, #403F3D);
     border-bottom: transparent 0.125rem solid;
     padding-bottom: 0.25rem;
+    transition: 300ms;
 }
 
 .menu_button img{

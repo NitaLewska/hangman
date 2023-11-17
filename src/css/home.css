@@ -87,7 +87,7 @@
     background-position: center center;
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
-    transition: all 200ms;
+    transition: all 300ms;
 }
 
 .favourite_coffees>button.left {
