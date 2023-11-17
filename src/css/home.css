@@ -66,17 +66,7 @@
 }
 
 .favourite_coffees>h2 {
-    color: var(--text-dark, #403F3D);
-    text-align: center;
-    font-size: 60px;
-    font-weight: 600;
-    line-height: 125%;
     grid-column: 1/4;
-}
-
-.favourite_coffees>h2>span {
-    color: var(--text-accent, #B0907A);
-    font-style: italic;
 }
 
 .favourite_coffees>button {
