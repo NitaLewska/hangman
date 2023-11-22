@@ -20,6 +20,7 @@ body {
     --text-light: #E1D4C9;
     --text-accent: #B0907A;
     --background-body: #E1D4C9;
+    --background-container: #665F55;
     --border-light: #C1B6AD;
 }
 
@@ -73,7 +74,7 @@ header>nav>ul>li>a,
 
 header>nav>ul>li>a:hover,
 .menu_button:hover {
-    border-bottom: #403F3D 0.125rem solid;
+    border-bottom: var(--text-dark, #403F3D) 0.125rem solid;
 }
 
 .menu_button {
@@ -83,7 +84,7 @@ header>nav>ul>li>a:hover,
 h2 {
     color: var(--text-dark, #403F3D);
     text-align: center;
-    font-size: 60px;
+    font-size: 3.75rem;
     font-weight: 600;
     line-height: 125%;
 
@@ -96,8 +97,8 @@ h2>span {
 }
 
 footer.container {
-    height: 450px;
-    border-radius: 40px;
+    height: 28.125rem;
+    border-radius: 2.5rem;
     background: var(--background-container, #665F55);
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
