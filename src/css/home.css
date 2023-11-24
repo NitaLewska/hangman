@@ -50,9 +50,23 @@
     font-weight: 600;
     line-height: 150%;
     cursor: pointer;
+    gap: 0.5rem;
+    transition: all 400ms ease-out;
+    padding-left: 1.28rem;
 }
 
-.enjoy a:hover {}
+.enjoy a > img {
+    opacity: 0;
+    transition: all 400ms ease-out;
+}
+
+.enjoy a:hover {
+    padding-left: 0px;
+}
+
+.enjoy a:hover > img {
+    opacity: 1;
+}
 
 
 .favourite_coffees {
@@ -78,7 +92,7 @@
     background-position: center center;
     background-size: 1.5rem 1.5rem;
     background-repeat: no-repeat;
-    transition: all 300ms;
+    transition: all 400ms;
 }
 
 .favourite_coffees>button.left {
@@ -186,27 +200,38 @@
     max-width: 100%;
 }
 
-.about > div > img {
+.about > div > .about_img-container {
+    overflow: hidden;
     width: 660px;
     border-radius: 20px;
+}
+
+.about > div > .about_img-container > img {
     object-position: center center;
+    width: 100%;
+    transform: scale(1.11);
+    transition: transform 400ms ease-out;
 }
 
-.about > div > img:nth-of-type(2), .about > div > img:nth-of-type(3)  {
-    aspect-ratio: 1.535;
+.about > div > .about_img-container:hover > img{
+    transform: scale(1);
+}
+
+.about > div > .about_img-container:nth-of-type(2) > img, .about > div > .about_img-container:nth-of-type(3) > img  {
+    aspect-ratio: 1.55;
     object-fit: cover;
 }
 
-.about > div > img:nth-of-type(1), .about > div > img:nth-of-type(4)  {
-    aspect-ratio: 1.119;
+.about > div > .about_img-container:nth-of-type(1) > img, .about > div > .about_img-container:nth-of-type(4) > img  {
+    aspect-ratio: 1.129;
     object-fit: cover;
 }
 
-.about > div > img:nth-of-type(1) {
+.about > div > .about_img-container:nth-of-type(1) {
     grid-row: 1/3;
 }
 
-.about > div > img:nth-of-type(4) {
+.about > div > .about_img-container:nth-of-type(4) {
     grid-row: 2/4;
 }
 
