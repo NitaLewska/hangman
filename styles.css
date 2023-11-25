@@ -103,9 +103,108 @@ p {
     line-height: 150%;
 }
 
+h3 {
+    color: var(--text-dark, #403F3D);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+}
+
 footer.container {
     height: 28.125rem;
     border-radius: 2.5rem;
     background: var(--background-container, #665F55);
     margin-bottom: 2.5rem;
+    color: var(--text-light, #E1D4C9);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 100px;
 }
+
+footer.container h2,
+footer.container h3 {
+    color: var(--text-light, #E1D4C9);
+    text-align: left;
+}
+
+
+footer.container>article {
+    flex: 100%;
+    width: 530px;
+}
+
+footer.container li {
+    list-style: none;
+}
+
+footer.container a{
+    text-decoration: none;
+    color: var(--text-light, #E1D4C9);
+}
+
+footer.container>article:first-of-type>ul {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+footer.container>article:first-of-type>ul>li>a {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 100px;
+    border: 1px solid var(--border-light, #C1B6AD);
+    transition: all 400ms ease-out;
+}
+
+footer.container>article:first-of-type>ul>li>a>img {
+    transition: all 400ms ease-out;
+}
+
+footer.container>article:first-of-type>ul>li>a:hover>img {
+    filter: brightness(0) saturate(100%) invert(22%) sepia(6%) saturate(276%) hue-rotate(2deg) brightness(97%) contrast(88%);
+}
+
+footer.container>article:first-of-type>ul>li>a:hover{
+    background: var(--background-body, #E1D4C9);
+}
+
+footer.container>article:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+footer.container>article:nth-of-type(2)>ul {
+    margin-top: 33px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+footer.container>article:nth-of-type(2)>ul>li {
+    width: fit-content;
+    display: flex;
+    gap: 0.4rem;
+    align-content: center;
+    letter-spacing: 0.29px;
+    padding-block: 6px;
+    border-bottom: 2px solid transparent;
+    transition: all 400ms ease-out;
+}
+
+footer.container>article:nth-of-type(2)>ul>li:hover {
+    border-bottom: 2px solid var(--text-light, #E1D4C9);
+}
+
+footer.container>article:nth-of-type(2)>ul>li:last-of-type:hover {
+    border-bottom: 2px solid transparent;
+}
+
