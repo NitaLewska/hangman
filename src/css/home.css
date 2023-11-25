@@ -31,9 +31,6 @@
 
 .enjoy h1+p {
     color: var(--text-light, #E1D4C9);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 150%;
     max-width: 55ch;
 }
 
@@ -53,6 +50,7 @@
     gap: 0.5rem;
     transition: all 400ms ease-out;
     padding-left: 1.28rem;
+    text-decoration: none;
 }
 
 .enjoy a > img {
@@ -145,13 +143,6 @@
     line-height: 125%;
 }
 
-.favourite_coffees>article>p {
-    color: var(--text-dark, #403F3D);
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-}
 
 .favourite_coffees>article>p:last-of-type {
     color: var(--text-dark, #403F3D);
@@ -236,6 +227,35 @@
 }
 
 .mobile_app {
-    margin-top: 96px;
-    height: 500px;
+    margin-top: 6.4rem;
+    margin-bottom: 7.6rem;
+    height: 38rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
 }
+
+.mobile_app h2 {
+    text-align: left;
+}
+
+.mobile_app > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    text-align: left;
+    gap: 2.5rem 1.25rem;
+    flex-wrap: wrap;
+}
+
+.mobile_app  a {
+    display: flex;
+    height: 4rem;
+    width: 200px;
+    align-self: flex-start;
+    border-radius: 100px;
+    border: 1px solid var(--border-dark, #665F55);
+    color: transparent;
+}
+
