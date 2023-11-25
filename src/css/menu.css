@@ -1,0 +1,4 @@
+.menu_button:hover {
+    border-bottom: transparent 0.125rem solid;
+    cursor: default;
+}
