@@ -2,3 +2,60 @@
     border-bottom: transparent 0.125rem solid;
     cursor: default;
 }
+
+main>h2 {
+    max-width: 20ch;
+    margin: 1rem auto;
+}
+
+main>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin-bottom: 6.25rem;
+}
+
+.menu_card {
+    height: 506px;
+    width: 310px;
+    border-radius: 40px;
+    border: 1px solid var(--border-light, #C1B6AD);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.menu_card>div {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: 40px;
+    margin-bottom: 0.55rem;
+}
+
+.menu_card>div:hover>img {
+    transform: scale(1);
+}
+
+.menu_card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-position: center center;
+    transform: scale(1.1);
+    transition: all 400ms ease-out;
+}
+
+.menu_card>h3,
+.menu_card>p {
+    padding: 0 20px;
+}
+
+.menu_card>p:last-of-type {
+    margin-top: auto;
+    margin-bottom: 20px;
+    color: var(--text-dark, #403F3D);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+}
