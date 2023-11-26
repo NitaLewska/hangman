@@ -16,6 +16,36 @@ main>section {
     margin-bottom: 6.25rem;
 }
 
+main>div {
+    margin: 2.5rem auto 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+main>div>button {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    border-radius: 100px;
+    border: 1px solid var(--border-light, #C1B6AD);
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    color: var(--text-dark, #403F3D);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 100%;
+    background-color: transparent;
+}
+
+main>div>button>img {
+    object-fit: cover;
+    height: 1.875rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background: var(--border-light, #C1B6AD);
+}
+
 .menu_card {
     height: 506px;
     width: 310px;
