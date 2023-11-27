@@ -170,7 +170,7 @@ footer.container>article:first-of-type>ul>li>a {
 }
 
 footer.container>article:first-of-type>ul>li>a>img {
-    transition: all 400ms ease-out;
+    transition: filter 400ms ease-out, -webkit-filter 400ms ease-out;
 }
 
 footer.container>article:first-of-type>ul>li>a:hover>img {
