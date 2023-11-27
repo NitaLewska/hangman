@@ -1,6 +1,7 @@
-.menu_button:hover {
-    border-bottom: transparent 0.125rem solid;
+.menu_button, .menu_button:hover {
+    border-bottom: var(--text-dark, #403F3D) 0.125rem solid;
     cursor: default;
+    pointer-events: none;
 }
 
 h1{
@@ -69,7 +70,7 @@ main>div>button>img {
     margin-bottom: 0.55rem;
 }
 
-.menu_card>div:hover>img {
+.menu_card:hover>div>img {
     transform: scale(1);
 }
 
