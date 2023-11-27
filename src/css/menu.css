@@ -3,6 +3,11 @@
     cursor: default;
 }
 
+h1{
+    visibility: hidden;
+    height: 0;
+}
+
 main>h2 {
     max-width: 20ch;
     margin: 1rem auto;
