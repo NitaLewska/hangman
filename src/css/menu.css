@@ -1,6 +1,5 @@
-.menu_button, .menu_button:hover {
+.menu_button {
     border-bottom: var(--text-dark, #403F3D) 0.125rem solid;
-    cursor: default;
     pointer-events: none;
 }
 

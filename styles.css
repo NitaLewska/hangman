@@ -55,6 +55,12 @@ header>nav>ul {
     margin-left: 1.75rem;
 }
 
+.menu_button {
+    display: flex;
+    align-content: center;
+    gap: 0.2rem;
+}
+
 header>nav>ul>li>a,
 .menu_button {
     font-size: 1rem;
