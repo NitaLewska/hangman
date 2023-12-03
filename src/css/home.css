@@ -28,7 +28,6 @@
     letter-spacing: 0.03125rem;
 }
 
-
 .enjoy h1+p {
     color: var(--text-light, #E1D4C9);
     max-width: 55ch;
@@ -66,6 +65,19 @@
     opacity: 1;
 }
 
+@media (max-width: 1440px) {
+    .enjoy {
+        padding-left: 3.75rem;
+    }
+
+    .enjoy a {
+        padding-left: 0px;
+    }
+
+    .enjoy a>img {
+        opacity: 1;
+    }
+}
 
 .favourite_coffees {
     margin-top: 6.25rem;
@@ -228,6 +240,49 @@
     grid-row: 2/4;
 }
 
+@media (max-width: 1440px) {
+
+    .about>div {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 14px;
+        margin-top: 2.45rem;
+        max-width: 100%;
+    }
+
+    .about>div>.about_img-container>img {
+        object-fit: unset;
+        transform: scale(1.05);
+    }
+
+    .about>div>.about_img-container:nth-of-type(2)>img,
+    .about>div>.about_img-container:nth-of-type(3)>img {
+        display: none;
+    }
+
+    .about>div>.about_img-container:nth-of-type(1) {
+        grid-row: unset;
+    }
+
+    .about>div>.about_img-container:nth-of-type(1)>img,
+    .about>div>.about_img-container:nth-of-type(4)>img {
+        aspect-ratio: 1.175;
+
+    }
+
+    .about>div>.about_img-container:nth-of-type(4) {
+        aspect-ratio: 1.175;
+        grid-row: unset;
+    }
+
+    .about>div>.about_img-container {
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+
 .mobile_app {
     margin-top: 6.4rem;
     margin-bottom: 7.6rem;
@@ -290,3 +345,15 @@
 .mobile_app a:hover>img {
     filter: brightness(0) saturate(100%) invert(95%) sepia(2%) saturate(1846%) hue-rotate(324deg) brightness(90%) contrast(95%);
 }
+
+@media (max-width: 1440px) {
+    .mobile_app {
+        margin-top: 6.25rem;
+        margin-bottom: 6.4rem;
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 6.25rem;
+        justify-items: center
+    }
+}
+
