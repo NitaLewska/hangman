@@ -81,6 +81,7 @@ main>div>button.active>img, main>div>button:hover>img {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    cursor: pointer;
 }
 
 .menu_card>div {
