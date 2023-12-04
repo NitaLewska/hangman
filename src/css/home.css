@@ -57,12 +57,14 @@
     transition: all 400ms ease-out;
 }
 
-.enjoy a:hover {
-    padding-left: 0px;
-}
+@media screen {
+    .enjoy a:hover {
+        padding-left: 0px;
+    }
 
-.enjoy a:hover>img {
-    opacity: 1;
+    .enjoy a:hover>img {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 1440px) {
@@ -109,18 +111,20 @@
     background-image: url(../img/arrow-left.svg);
 }
 
-.favourite_coffees>button.left:hover {
-    background-color: var(--background-container, #665F55);
-    background-image: url(../img/arrow-left-hovered.svg);
+@media screen {
+    .favourite_coffees>button.left:hover {
+        background-color: var(--background-container, #665F55);
+        background-image: url(../img/arrow-left-hovered.svg);
+    }
+
+    .favourite_coffees>button.right:hover {
+        background-color: var(--background-container, #665F55);
+        background-image: url(../img/arrow-right-hovered.svg);
+    }
 }
 
 .favourite_coffees>button.right {
     background-image: url(../img/arrow-right.svg);
-}
-
-.favourite_coffees>button.right:hover {
-    background-color: var(--background-container, #665F55);
-    background-image: url(../img/arrow-right-hovered.svg);
 }
 
 .favourite_coffees>button {
@@ -216,8 +220,10 @@
     transition: transform 400ms ease-out;
 }
 
-.about>div>.about_img-container:hover>img {
-    transform: scale(1);
+@media screen {
+    .about>div>.about_img-container:hover>img {
+        transform: scale(1);
+    }
 }
 
 .about>div>.about_img-container:nth-of-type(2)>img,
@@ -332,18 +338,19 @@
     font-weight: 600;
 }
 
-.mobile_app a:hover {
-    background: var(--background-container, #665F55);
-    color: var(--text-light, #E1D4C9);
+@media screen {
+    .mobile_app a:hover {
+        background: var(--background-container, #665F55);
+        color: var(--text-light, #E1D4C9);
+    }
 
+    .mobile_app a:hover>img {
+        filter: brightness(0) saturate(100%) invert(95%) sepia(2%) saturate(1846%) hue-rotate(324deg) brightness(90%) contrast(95%);
+    }
 }
 
 .mobile_app a>img {
     transition: filter 400ms ease-out, -webkit-filter 400ms ease-out;
-}
-
-.mobile_app a:hover>img {
-    filter: brightness(0) saturate(100%) invert(95%) sepia(2%) saturate(1846%) hue-rotate(324deg) brightness(90%) contrast(95%);
 }
 
 @media (max-width: 1440px) {
