@@ -67,7 +67,7 @@
     }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
     .enjoy {
         padding-left: 3.75rem;
     }
@@ -294,7 +294,7 @@
     grid-row: 2/4;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
 
     .about>div {
         display: grid;
@@ -421,7 +421,7 @@
     transition: filter 400ms ease-out, -webkit-filter 400ms ease-out;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1200px) {
     .mobile_app {
         margin-top: 6.25rem;
         margin-bottom: 6.4rem;
