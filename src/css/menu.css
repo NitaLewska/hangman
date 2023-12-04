@@ -139,7 +139,7 @@ main>div>button.active {
     margin: 0 auto 6.3rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     main>section {
         justify-content: center;
         margin-bottom: 0rem;
