@@ -154,4 +154,13 @@ main>div>button.active {
     }
 }
 
-@media (max-width: 750px) {}
+@media (max-width: 750px) {
+    main>div {
+        margin: 2.5rem auto 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: unset;
+        width: auto;
+        max-width: 344px;
+    }
+}
