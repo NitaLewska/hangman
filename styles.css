@@ -22,7 +22,6 @@ body {
     --background-body: #E1D4C9;
     --background-container: #665F55;
     --border-light: #C1B6AD;
-
 }
 
 .container {
@@ -79,13 +78,27 @@ header>nav>ul>li>a,
     margin-left: 0.275rem;
 }
 
-header>nav>ul>li>a:hover,
-.menu_button:hover {
-    border-bottom: var(--text-dark, #403F3D) 0.125rem solid;
+@media (hover: hover) {
+    header>nav>ul>li>a:hover,
+    .menu_button:hover {
+        border-bottom: var(--text-dark, #403F3D) 0.125rem solid;
+    }
 }
 
 .menu_button {
     justify-self: end;
+}
+
+.menu_burger_button {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-dark, #665F55);
+    grid-column: 3/4;
+    background: url(src/img/menu.png);
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 @media (max-width: 1440px) {
@@ -94,12 +107,25 @@ header>nav>ul>li>a:hover,
         margin: 0 auto;
     }
 
-    header>nav{
+    header>nav {
         display: none;
     }
 
     .menu_button {
         display: none;
+    }
+}
+
+@media (max-width: 750px) {
+    .container {
+        max-width: calc(100vw - 2.25rem);
+        margin: 0 auto;
+    }
+
+    .menu_burger_button {
+        display: block;
+        margin-left: auto;
+        justify-self: end;
     }
 }
 
@@ -133,6 +159,12 @@ h3 {
     line-height: 125%;
 }
 
+@media (max-width: 750px) {
+    h2 {
+        font-size: 2rem;
+    }
+}
+
 footer.container {
     height: 28.125rem;
     border-radius: 2.5rem;
@@ -162,7 +194,7 @@ footer.container li {
     list-style: none;
 }
 
-footer.container a{
+footer.container a {
     text-decoration: none;
     color: var(--text-light, #E1D4C9);
 }
@@ -189,15 +221,18 @@ footer.container>article:first-of-type>ul>li>a>img {
     transition: filter 400ms ease-out, -webkit-filter 400ms ease-out;
 }
 
-footer.container>article:first-of-type>ul>li>a:hover>img {
-    filter: brightness(0) saturate(100%) invert(22%) sepia(6%) saturate(276%) hue-rotate(2deg) brightness(97%) contrast(88%);
+@media (hover: hover) {
+    footer.container>article:first-of-type>ul>li>a:hover>img {
+        filter: brightness(0) saturate(100%) invert(22%) sepia(6%) saturate(276%) hue-rotate(2deg) brightness(97%) contrast(88%);
+    }
+
+    footer.container>article:first-of-type>ul>li>a:hover {
+        background: var(--background-body, #E1D4C9);
+    }
 }
 
-footer.container>article:first-of-type>ul>li>a:hover{
-    background: var(--background-body, #E1D4C9);
-}
 
-footer.container>article:nth-of-type(2){
+footer.container>article:nth-of-type(2) {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
@@ -217,7 +252,8 @@ footer.container>article:nth-of-type(2)>ul>li {
     transition: all 400ms ease-out;
 }
 
-footer.container>article:nth-of-type(2)>ul>li>a, footer.container>article:nth-of-type(2)>ul>li:nth-of-type(3) {
+footer.container>article:nth-of-type(2)>ul>li>a,
+footer.container>article:nth-of-type(2)>ul>li:nth-of-type(3) {
     display: flex;
     gap: 0.4rem;
     align-content: center;
@@ -225,12 +261,14 @@ footer.container>article:nth-of-type(2)>ul>li>a, footer.container>article:nth-of
     padding-block: 6px;
 }
 
-footer.container>article:nth-of-type(2)>ul>li:hover {
-    border-bottom: 2px solid var(--text-light, #E1D4C9);
-}
+@media (hover: hover) {
+    footer.container>article:nth-of-type(2)>ul>li:hover {
+        border-bottom: 2px solid var(--text-light, #E1D4C9);
+    }
 
-footer.container>article:nth-of-type(2)>ul>li:last-of-type:hover {
-    border-bottom: 2px solid transparent;
+    footer.container>article:nth-of-type(2)>ul>li:last-of-type:hover {
+        border-bottom: 2px solid transparent;
+    }
 }
 
 @media (max-width: 1440px) {
@@ -245,3 +283,23 @@ footer.container>article:nth-of-type(2)>ul>li:last-of-type:hover {
     }
 }
 
+@media (max-width: 750px) {
+    footer.container {
+        padding: 60px 0.8rem 28px;
+        flex-wrap: nowrap;
+        gap: 2.6rem;
+        height: auto;
+    }
+
+    footer.container>article {
+        width: 100%;
+    }
+
+    footer.container h2 {
+        max-width: 100%;
+    }
+
+    footer.container>article:nth-of-type(2) {
+        margin-top: 0rem;
+    }
+}
