@@ -37,8 +37,8 @@ main>div {
 main>div>button {
     display: flex;
     align-items: center;
-    height: 46px;
-    border-radius: 100px;
+    height: 2.875rem;
+    border-radius: 6.25rem;
     border: 1px solid var(--border-light, #C1B6AD);
     padding: 0.5rem 1rem 0.5rem 0.5rem;
     color: var(--text-dark, #403F3D);
@@ -120,17 +120,17 @@ main>div>button.active {
 
 .menu_card>p:last-of-type {
     margin-top: auto;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     color: var(--text-dark, #403F3D);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 125%;
 }
 
 .load_more {
     display: none;
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
     background: url(../img/refresh.svg);
     background-repeat: no-repeat;
     background-position: center center;
