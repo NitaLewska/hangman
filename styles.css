@@ -114,6 +114,12 @@ header>nav>ul>li>a,
     .menu_button {
         display: none;
     }
+    
+    .menu_burger_button {
+        display: block;
+        margin-left: auto;
+        justify-self: end;
+    }
 }
 
 @media (max-width: 750px) {
@@ -122,11 +128,7 @@ header>nav>ul>li>a,
         margin: 0 auto;
     }
 
-    .menu_burger_button {
-        display: block;
-        margin-left: auto;
-        justify-self: end;
-    }
+
 }
 
 h2 {

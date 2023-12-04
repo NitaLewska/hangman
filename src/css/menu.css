@@ -64,13 +64,18 @@ main>div>button.active {
     pointer-events: none;
 }
 
-main>div>button.active, main>div>button:hover {
-    background: var(--background-container, #665F55);
-    color: var(--text-light, #E1D4C9);
-}
+@media (hover: hover) {
 
-main>div>button.active>img, main>div>button:hover>img {
-    background: var(--background-body, #E1D4C9);
+    main>div>button.active,
+    main>div>button:hover {
+        background: var(--background-container, #665F55);
+        color: var(--text-light, #E1D4C9);
+    }
+
+    main>div>button.active>img,
+    main>div>button:hover>img {
+        background: var(--background-body, #E1D4C9);
+    }
 }
 
 .menu_card {
@@ -92,8 +97,12 @@ main>div>button.active>img, main>div>button:hover>img {
     margin-bottom: 0.55rem;
 }
 
-.menu_card:hover>div>img {
-    transform: scale(1);
+
+
+@media (hover: hover) {
+    .menu_card:hover>div>img {
+        transform: scale(1);
+    }
 }
 
 .menu_card img {
@@ -117,3 +126,32 @@ main>div>button.active>img, main>div>button:hover>img {
     font-weight: 600;
     line-height: 125%;
 }
+
+.load_more {
+    display: none;
+    width: 60px;
+    height: 60px;
+    background: url(../img/refresh.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    border: 1px solid var(--border-dark, #665F55);
+    margin: 0 auto 6.3rem;
+}
+
+@media (max-width: 1200px) {
+    main>section {
+        justify-content: center;
+        margin-bottom: 0rem;
+    }
+
+    .menu_card:nth-of-type(n+5) {
+        display: none;
+    }
+
+    .load_more {
+        display: block;
+    }
+}
+
+@media (max-width: 750px) {}
