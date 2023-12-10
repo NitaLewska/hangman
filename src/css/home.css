@@ -10,7 +10,20 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    position: relative;
+    z-index: 0;
 }
+
+.enjoy video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    border-radius: 2.5rem;
+  }
 
 .enjoy h1 {
     color: var(--text-light, #E1D4C9);
