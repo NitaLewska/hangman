@@ -3,6 +3,13 @@
     pointer-events: none;
 }
 
+@media (max-width: 48rem) {
+    .menu_button {
+        border-bottom: transparent 0.125rem solid;
+        pointer-events: all;
+    }
+}
+
 h1 {
     visibility: hidden;
     height: 0;

@@ -1,38 +1,18 @@
-// fav_coffee slider
+let navbar = document.querySelector("header>nav")
 
-let favCoffeeLeftButton = document.querySelector('.favourite_coffees .left')
-let favCoffeeRightButton = document.querySelector('.favourite_coffees .right')
-let favCoffeeCards = Array.from(document.querySelectorAll(".fav_coffee_card"))
+let burgerButton = document.querySelector('.menu_burger_button')
+let menuLink = document.querySelector('.menu_button')
+burgerButton.addEventListener('click', toggleNav)
 
-let activeCoffeeCard = 0
+function toggleNav() {
+    navbar.classList.toggle("hidden")
+    menuLink.classList.toggle("hidden")
+    burgerButton.classList.toggle('hidden')
+    navbar.classList.contains("hidden") ?
+        (document.body.style.overflowY = "") : (document.body.style.overflowY = "hidden")
+    navbar.classList.contains("hidden") ?
+        (document.body.style.maxHeight = "100vh") : (document.body.style.maxHeight = "")
+}
 
-favCoffeeRightButton.addEventListener('click', function () {
-    console.log(1, activeCoffeeCard)
-    activeCoffeeCard++
-    activeCoffeeCard = activeCoffeeCard % favCoffeeCards.length
-
-    console.log(1, activeCoffeeCard, favCoffeeCards, favCoffeeCards[activeCoffeeCard])
-    favCoffeeCards.map((a) => {
-        a.classList.remove('active')
-        a.classList.add('hidden')
-    })
-    favCoffeeCards[+activeCoffeeCard].classList.remove('hidden')
-    favCoffeeCards[+activeCoffeeCard].classList.add('active')
-})
-
-favCoffeeLeftButton.addEventListener('click', function () {
-    console.log(1, activeCoffeeCard)
-    activeCoffeeCard--
-    if(activeCoffeeCard < 0) {
-        activeCoffeeCard = favCoffeeCards.length - 1
-    }
-    activeCoffeeCard = activeCoffeeCard % favCoffeeCards.length
-
-    console.log(1, activeCoffeeCard, favCoffeeCards, favCoffeeCards[activeCoffeeCard])
-    favCoffeeCards.map((a) => {
-        a.classList.remove('active')
-        a.classList.add('hidden')
-    })
-    favCoffeeCards[+activeCoffeeCard].classList.remove('hidden')
-    favCoffeeCards[+activeCoffeeCard].classList.add('active')
-})
+let navLinks = document.querySelectorAll('nav a')
+Array.from(navLinks).map(a => a.addEventListener('click', toggleNav))
