@@ -70,6 +70,15 @@ document.querySelector('.modal button').addEventListener('click', (e) => {
         left: 0,
         top: parseInt(scrolled || '0') * -1,
     })
+    Array.from(coffeeSizes).map(a => a.checked = false)
+    Array.from(teaSizes).map(a => a.checked = false)
+    Array.from(dessertSizes).map(a => a.checked = false)
+    Array.from(coffeeAdds).map(a => a.checked = false)
+    Array.from(teaAdds).map(a => a.checked = false)
+    Array.from(dessertAdds).map(a => a.checked = false)
+    Array.from(coffeeSizes)[0].checked = true
+    Array.from(teaSizes)[0].checked = true
+    Array.from(dessertSizes)[0].checked = true
 })
 
 

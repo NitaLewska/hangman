@@ -383,6 +383,12 @@ main>div>button.active>img {
     }
 }
 
-@media (max-width: 48rem) {
-
+@media (max-width: 46.875rem) {
+    .modal form {
+        grid-template-columns: 1fr;
+        width: 342px;
+    }
+    .modal .modal_image_placeholder {
+        display: none;
+    }
 }
