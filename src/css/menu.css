@@ -153,6 +153,10 @@ main>div>button.active>img {
     margin: 0 auto 6.3rem;
 }
 
+.menu_card.hidden {
+    display: none;
+}
+
 @media (max-width: 1400px) {
     main>section {
         justify-content: center;
@@ -161,12 +165,12 @@ main>div>button.active>img {
         margin-inline: auto;
     }
 
-    .menu_card:nth-of-type(n+5) {
-        display: none;
-    }
-
     .load_more {
         display: block;
+    }
+
+    .load_more.hidden {
+        display: none;
     }
 }
 
