@@ -9,6 +9,11 @@ let loadButton = document.querySelector(".load_more")
 let currentCategory = 0
 changeCategory(0)()
 
+
+window.addEventListener('resize', function() {
+    changeCategory(currentCategory)()
+}, true);
+
 function changeCategory(i) {
     return function() {
         currentCategory = i
