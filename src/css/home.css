@@ -23,7 +23,7 @@
     top: 0;
     left: 0;
     border-radius: 2.5rem;
-  }
+}
 
 .enjoy h1 {
     color: var(--text-light, #E1D4C9);
@@ -371,7 +371,7 @@
         margin-left: -2px;
     }
 
-    .about>div>.about_img-container>img{
+    .about>div>.about_img-container>img {
         height: 585px;
         aspect-ratio: unset;
         transform: scale(1.2);
@@ -479,4 +479,3 @@
         margin-top: -1.3rem;
     }
 }
-
