@@ -11,20 +11,59 @@
     <link rel="icon" href="src/img/coffee-cup.svg" type="image/svg+xml">
     <script src="scripts.js" defer></script>
     <script src="categories.js" defer></script>
+    <script src="modal.js" defer></script>
 </head>
 
 <body>
+    <div class="modal">
+        <form action="">
+            <div class="modal_image_placeholder">
+                <img src="src/img/coffee-1.jpg" alt="">
+            </div>
+            <div>
+                <h3>Irish coffee</h3>
+                <p class="description">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+                <p class="">Size</p>
+                <div class="coffee_n_tea_sizes modal_radio">
+                    <input type="radio" id="size_s" name="size" value="size_s" checked />
+                    <label for="size_s"><span>S</span>200 ml</label>
+                    <input type="radio" id="size_m" name="size" value="size_m" />
+                    <label for="size_m"><span>M</span>300 ml</label>
+                    <input type="radio" id="size_l" name="size" value="size_l" />
+                    <label for="size_l"><span>L</span>400 ml</label>
+                </div>
+                <p>Additives</p>
+                <div class="coffee_additives modal_radio">
+                    <input type="radio" id="coffee_add_1" name="coffee_add" value="add_1"/>
+                    <label for="coffee_add_1"><span>1</span>Sugar</label>
+                    <input type="radio" id="coffee_add_2" name="coffee_add" value="add_2" />
+                    <label for="coffee_add_2"><span>2</span>Cinnamon</label>
+                    <input type="radio" id="coffee_add_3" name="coffee_add" value="add_3" />
+                    <label for="coffee_add_3"><span>3</span>Syrup</label>
+                </div>
+                <p class="price">Total<span>$7.00</span></p>
+                <p class="not_offer">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+                <button>Close</button>
+            </div>
+        </form>
+    </div>
     <header class="container">
-        <a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html"><img src="src/img/logo.svg" alt="resource_coffe_house_logo" class="logo"></a>
+        <a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html"><img src="src/img/logo.svg"
+                alt="resource_coffe_house_logo" class="logo"></a>
         <nav class="hidden">
             <ul>
-                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#favourite_coffees">Favorite coffee</a></li>
-                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#about">About</a></li>
-                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#mobile_app">Mobile app</a></li>
-                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#contacts">Contact us</a></li>
+                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#favourite_coffees">Favorite
+                        coffee</a></li>
+                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#about">About</a>
+                </li>
+                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#mobile_app">Mobile
+                        app</a></li>
+                <li><a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/home.html#contacts">Contact
+                        us</a></li>
             </ul>
         </nav>
-        <a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/menu.html" class="menu_button hidden">Menu<img src="src/img/coffee-cup.svg" alt="coffee-cup_icon"></a>
+        <a href="https://rolling-scopes-school.github.io/nitalewska-JSFE2023Q4/menu.html"
+            class="menu_button hidden">Menu<img src="src/img/coffee-cup.svg" alt="coffee-cup_icon"></a>
         <button class="menu_burger_button"></button>
     </header>
     <main class="container">

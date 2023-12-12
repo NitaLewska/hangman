@@ -17,4 +17,4 @@ function toggleNav() {
 let navLinks = document.querySelectorAll('nav a')
 Array.from(navLinks).map(a => a.addEventListener('click', toggleNav))
 
-alert("12/12/23 - 17.30 МСК, почти доделала слайдер, начала модалку")
+// alert("12/12/23 - 17.30 МСК, почти доделала слайдер, начала модалку")
