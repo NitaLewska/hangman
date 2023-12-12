@@ -69,4 +69,3 @@ function loadMore() {
     }
     loadButton.classList.add('hidden')
 }
-

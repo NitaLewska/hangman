@@ -11,7 +11,7 @@ function toggleNav() {
     navbar.classList.contains("hidden") ?
         (document.body.style.overflowY = "") : (document.body.style.overflowY = "hidden")
     navbar.classList.contains("hidden") ?
-        (document.body.style.maxHeight = "100vh") : (document.body.style.maxHeight = "")
+        (document.body.style.maxHeight = "") : (document.body.style.maxHeight = "100vh")
 }
 
 let navLinks = document.querySelectorAll('nav a')
