@@ -270,11 +270,14 @@ main>div>button.active>img {
     line-height: 150%;
     color: var(--text-dark, #403F3D);
     display: flex;
-    gap: 0.25rem;
-    margin-left: -0.25rem;
     margin-bottom: 1.15rem;
     align-items: center;
+    gap:0.5rem 0 ;
+}
 
+
+.modal .modal_radio.hidden {
+    display: none;
 }
 
 .modal .modal_radio label {
@@ -284,6 +287,7 @@ main>div>button.active>img {
     padding: 8px 16px 8px 8px;
     border-radius: 100px;
     border: 1px solid var(--border-light, #C1B6AD);
+    margin-left: 0.25rem;
 }
 
 .modal .modal_radio label span {
@@ -298,7 +302,7 @@ main>div>button.active>img {
     font-size: 16px;
 }
 
-.modal .modal_radio input[type="radio"]:checked+label {
+.modal .modal_radio input[type="radio"]:checked+label, .modal .modal_radio input[type="checkbox"]:checked+label {
     background: var(--background-container, #665F55);
     color: var(--text-light, #E1D4C9);
 }
@@ -366,4 +370,19 @@ main>div>button.active>img {
     /* 24px */
     margin-top: 1rem;
     cursor: pointer;
+}
+
+@media (max-width: 75rem) {
+    .modal form {
+        grid-template-columns: auto auto;
+        width: 688px;
+    }
+
+    .modal .modal_radio {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 48rem) {
+
 }

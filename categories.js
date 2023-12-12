@@ -6,11 +6,12 @@ let teaCards = document.querySelectorAll('.menu_tea')
 let dessertCards = document.querySelectorAll('.menu_dessert')
 let loadButton = document.querySelector(".load_more")
 
+let currentCategory = 0
 changeCategory(0)()
 
 function changeCategory(i) {
     return function() {
-        console.log(i)
+        currentCategory = i
         Array.from(categoriesButtons).map(a => a.classList.remove('active'))
         Array.from(categoriesButtons)[i].classList.add('active')
         Array.from(menuCards).map(a => a.classList.add('hidden'))
