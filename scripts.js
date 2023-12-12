@@ -5,13 +5,16 @@ let menuLink = document.querySelector('.menu_button')
 burgerButton.addEventListener('click', toggleNav)
 
 function toggleNav() {
-    navbar.classList.toggle("hidden")
-    menuLink.classList.toggle("hidden")
-    burgerButton.classList.toggle('hidden')
-    navbar.classList.contains("hidden") ?
-        (document.body.style.overflowY = "") : (document.body.style.overflowY = "hidden")
-    navbar.classList.contains("hidden") ?
-        (document.body.style.maxHeight = "") : (document.body.style.maxHeight = "100vh")
+    if (window.screen.width < 769) {
+        navbar.classList.toggle("hidden")
+        menuLink.classList.toggle("hidden")
+        burgerButton.classList.toggle('hidden')
+        navbar.classList.contains("hidden") ?
+            (document.body.style.overflowY = "") : (document.body.style.overflowY = "hidden")
+        navbar.classList.contains("hidden") ?
+            (document.body.style.maxHeight = "") : (document.body.style.maxHeight = "100vh")
+    }
+
 }
 
 let navLinks = document.querySelectorAll('nav a')
