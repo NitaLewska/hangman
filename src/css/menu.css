@@ -184,3 +184,11 @@ main>div>button.active>img {
         max-width: 344px;
     }
 }
+
+.modal {
+    display: none;;
+}
+
+.modal.active {
+
+}

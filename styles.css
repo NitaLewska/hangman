@@ -149,6 +149,7 @@ header>nav>ul>li>a,
     header {
         display: grid;
         grid-template-columns: 1fr 5fr 1fr;
+        position: relative;
     }
 }
 
@@ -159,9 +160,10 @@ header>nav>ul>li>a,
         height: calc(100vh - 5.125rem);
         background-color: #E1D4C9;
         top: 6rem;
-        left: 0;
+        left: -2.5vw;
         z-index: 5;
         transition: 300ms ease-in-out;
+        transform: translateX(0);
     }
 
     header>nav.hidden, .menu_button.hidden {
@@ -185,6 +187,7 @@ header>nav>ul>li>a,
         display: flex;
         align-items: center;
         gap: 1rem;
+        margin-left: 1.25rem;
         transition: 300ms ease-in-out;
     }
 

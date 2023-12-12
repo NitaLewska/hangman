@@ -1,7 +1,7 @@
 // fav_coffee slider
 
-let favCoffeeLeftButton = document.querySelector('.favourite_coffees .left')
-let favCoffeeRightButton = document.querySelector('.favourite_coffees .right')
+let favCoffeeLeftButton = document.querySelector('.favourite_coffees button.left')
+let favCoffeeRightButton = document.querySelector('.favourite_coffees button.right')
 let favCoffeeCards = Array.from(document.querySelectorAll(".fav_coffee_card"))
 let sliderIndicators = Array.from(document.querySelectorAll(".slider_indication"))
 
@@ -28,14 +28,10 @@ window.addEventListener("keydown", (event) => {
 function nextSlide() {
     activeCoffeeCard++
     activeCoffeeCard = activeCoffeeCard % favCoffeeCards.length
-    favCoffeeCards.map((a) => {
-        a.classList.remove('active')
-        a.classList.add('hidden')
-    })
-    favCoffeeCards[+activeCoffeeCard].classList.remove('hidden')
-    favCoffeeCards[+activeCoffeeCard].classList.add('active')
     sliderIndicators.map(a => a.classList.remove('active'))
     sliderIndicators[+activeCoffeeCard].classList.add('active')
+    let direction = 'ltr'
+    placeSlides(direction)
 }
 
 function previousSlide() {
@@ -44,16 +40,48 @@ function previousSlide() {
         activeCoffeeCard = favCoffeeCards.length - 1
     }
     activeCoffeeCard = activeCoffeeCard % favCoffeeCards.length
-
-    favCoffeeCards.map((a) => {
-        a.classList.remove('active')
-        a.classList.add('hidden')
-    })
-    favCoffeeCards[+activeCoffeeCard].classList.remove('hidden')
-    favCoffeeCards[+activeCoffeeCard].classList.add('active')
     sliderIndicators.map(a => a.classList.remove('active'))
     sliderIndicators[+activeCoffeeCard].classList.add('active')
+    let direction = 'rtl'
+    placeSlides(direction)
 }
+
+function placeSlides(direction) {
+    let right = (+activeCoffeeCard + 1) % favCoffeeCards.length
+    let left = +activeCoffeeCard - 1
+    if(left < 0) {
+        left = favCoffeeCards.length - 1
+    }
+    console.log(direction)
+    favCoffeeCards.map((a) => a.classList.remove('left'))
+    favCoffeeCards.map((a) => a.classList.remove('right'))
+    favCoffeeCards.map((a) => a.classList.add('hidden'))
+    favCoffeeCards[activeCoffeeCard].classList.remove('hidden')
+    direction != 'rtl' ? favCoffeeCards[left].classList.add('hidden'):favCoffeeCards[right].classList.add('hidden')
+    favCoffeeCards[left].classList.add('left')
+    favCoffeeCards[right].classList.add('right')
+}
+
+let touchstartX = 0
+let touchendX = 0
+
+function checkDirection() {
+  if (touchendX < touchstartX) {
+    nextSlide()
+  }
+  if (touchendX > touchstartX) {
+    previousSlide()
+  }
+}
+
+document.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})
 
 function autoSlider() {
     console.log(1)
@@ -63,3 +91,5 @@ function autoSlider() {
 }
 
 autoSlider()
+
+
