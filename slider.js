@@ -74,20 +74,23 @@ function checkDirection() {
   }
 }
 
-document.addEventListener('touchstart', e => {
+document.querySelector('.favourite_coffees').addEventListener('touchstart', e => {
   touchstartX = e.changedTouches[0].screenX
 })
 
-document.addEventListener('touchend', e => {
+document.querySelector('.favourite_coffees').addEventListener('touchend', e => {
   touchendX = e.changedTouches[0].screenX
   checkDirection()
 })
 
 function autoSlider() {
-    console.log(1)
     let autoNextSlide = setInterval(nextSlide, 5 * 1000)
-    // favCoffeeCards.map(a => a.addEventListener("mouseenter", () => clearInterval(autoNextSlide)))
-    // favCoffeeCards.map(a => a.addEventListener("mouseout", () => autoNextSlide = setInterval(nextSlide, 1 * 1000)))
+    favCoffeeCards.map(a => a.addEventListener("mouseenter", () => clearInterval(autoNextSlide)))
+    favCoffeeCards.map(a => a.addEventListener("mouseout", () => autoNextSlide = setInterval(nextSlide, 5 * 1000)))
+    favCoffeeRightButton.addEventListener('click', () => clearInterval(autoNextSlide))
+    favCoffeeRightButton.addEventListener('click', () => autoNextSlide = setInterval(nextSlide, 5 * 1000))
+    favCoffeeLeftButton.addEventListener('click', () => clearInterval(autoNextSlide))
+    favCoffeeLeftButton.addEventListener('click', () => autoNextSlide = setInterval(nextSlide, 5 * 1000))
 }
 
 autoSlider()
