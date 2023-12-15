@@ -10,6 +10,19 @@
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    position: relative;
+    z-index: 0;
+}
+
+.enjoy video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    border-radius: 2.5rem;
 }
 
 .enjoy h1 {
@@ -156,7 +169,7 @@
     cursor: pointer;
 }
 
-.favourite_coffees>article {
+.fav_coffee_card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,13 +178,14 @@
     justify-self: center;
     max-width: 45ch;
     text-align: center;
+    transition: 500ms;
 }
 
-.favourite_coffees>article>img {
+.fav_coffee_card>img {
     height: 30rem;
 }
 
-.favourite_coffees>article>h3 {
+.fav_coffee_card>h3 {
     color: var(--text-dark, #403F3D);
     font-size: 1.5rem;
     font-weight: 600;
@@ -179,14 +193,14 @@
 }
 
 
-.favourite_coffees>article>p:last-of-type {
+.fav_coffee_card>p:last-of-type {
     color: var(--text-dark, #403F3D);
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 125%;
 }
 
-.favourite_coffees>div {
+.favourite_coffees>.slider_indicators {
     display: flex;
     flex-direction: row;
     gap: 0.7rem;
@@ -195,7 +209,7 @@
     margin-top: -1rem;
 }
 
-.favourite_coffees>div>button {
+.favourite_coffees>.slider_indicators>button {
     width: 2.5rem;
     height: 0.25rem;
     border-radius: 100px;
@@ -204,7 +218,7 @@
     cursor: pointer;
 }
 
-.favourite_coffees>div>button.active {
+.favourite_coffees>.slider_indicators>button.active {
     background: var(--border-dark, #665F55);
 }
 
@@ -224,11 +238,11 @@
         max-width: 100%;
     }
 
-    .favourite_coffees>article {
+    .fav_coffee_card {
         height: auto;
     }
 
-    .favourite_coffees>article>img {
+    .fav_coffee_card>img {
         height: 348px;
     }
 
@@ -236,6 +250,44 @@
         margin-top: -0.4rem;
     }
 }
+
+.fav_coffee_card_placement {
+    width: 31rem;
+    height: 40rem;
+    grid-area: 2/3/3/2;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    gap: 5rem;
+    overflow-x: hidden;
+}
+
+.fav_coffee_card.hidden {
+    opacity: 0;
+}
+
+/* .fav_coffee_card.active {
+    display: flex;
+} */
+
+.fav_coffee_card{
+    transform: translateX(0);
+    order: 2;
+    z-index: 5;
+}
+
+.fav_coffee_card.left {
+    transform: translateX(-30rem);
+    order: 1;
+}
+
+.fav_coffee_card.right {
+    transform: translateX(30rem);
+    order: 3;
+}
+
 
 .about {
     margin-top: 6rem;
@@ -349,7 +401,7 @@
         margin-left: -2px;
     }
 
-    .about>div>.about_img-container>img{
+    .about>div>.about_img-container>img {
         height: 585px;
         aspect-ratio: unset;
         transform: scale(1.2);
