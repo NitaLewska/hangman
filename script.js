@@ -14,6 +14,72 @@ function createGameField() {
 function createGallows() {
     let gallows = document.createElement("div")
     gallows.classList.add("gallows")
+    let canvas = document.createElement("canvas")
+    canvas.width = 500
+    canvas.height = 700
+    gallows.appendChild(canvas)
+
+    let rect1 = canvas.getContext("2d");
+    rect1.fillStyle = "black";
+    rect1.fillRect(50, 20, 15, 700);
+
+    let rect2 = canvas.getContext("2d");
+    rect2.fillStyle = "black";
+    rect2.fillRect(0, 685, 500, 15);
+
+    let rect3 = canvas.getContext("2d");
+    rect3.fillStyle = "black";
+    rect3.fillRect(50, 20, 320, 15);
+
+    let rect4 = canvas.getContext("2d");
+    rect4.fillStyle = "black";
+    rect4.fillRect(355, 20, 15, 100);
+
+    let rect5 = canvas.getContext("2d");
+    rect5.rotate(45 * Math.PI / 180)
+    rect5.fillStyle = "black";
+    rect5.fillRect(100, -70, 15, 100);
+    rect5.rotate(-45 * Math.PI / 180)
+
+    let head = canvas.getContext("2d");
+    drawArc(head, 362.5, 180, 60, 0, 360, false, "black", "transparent", 10)
+
+    let body = canvas.getContext("2d");
+    body.fillStyle = "black";
+    body.fillRect(357.5, 240, 10, 180);
+
+    let leftHand = canvas.getContext("2d");
+    leftHand.fillStyle = "black";
+    leftHand.translate(357, 270);
+    leftHand.rotate(30 * Math.PI / 180);
+    leftHand.fillRect(0, 0, 10, 150);
+    leftHand.rotate(-30 * Math.PI / 180);
+    leftHand.translate(-357, -270);
+
+    let rightHand = canvas.getContext("2d");
+    rightHand.fillStyle = "black";
+    rightHand.translate(357, 270);
+    rightHand.rotate(-30 * Math.PI / 180);
+    rightHand.fillRect(0, 0, 10, 150);
+    rightHand.rotate(30 * Math.PI / 180);
+    rightHand.translate(-357, -270);
+
+    let leftLeg = canvas.getContext("2d");
+    leftLeg.fillStyle = "black";
+    leftLeg.translate(357, 415);
+    leftLeg.rotate(30 * Math.PI / 180);
+    leftLeg.fillRect(0, 0, 10, 150);
+    leftLeg.rotate(-30 * Math.PI / 180);
+    leftLeg.translate(-357, -415);
+
+    let rightLeg = canvas.getContext("2d");
+    rightLeg.fillStyle = "black";
+    rightLeg.translate(357, 415);
+    rightLeg.rotate(-30 * Math.PI / 180);
+    rightLeg.fillRect(0, 0, 10, 150);
+    rightLeg.rotate(-30 * Math.PI / 180);
+    rightLeg.translate(-357, -415);
+
     return gallows
 }
 
