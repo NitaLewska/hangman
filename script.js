@@ -46,3 +46,34 @@ function createQuiz() {
 }
 
 createGameField()
+
+let question1 = "What is the primary ingredient in guacamole?"
+let answer = "avocado"
+
+function newGame(question, answer) {
+    document.querySelector(".question").innerHTML = question
+    answer.split('').map((a) => createLetter(a))
+
+    function createLetter(a) {
+        let letter = document.createElement("div")
+        letter.appendChild(document.createElement("p"))
+
+        document.querySelector(".secret-word").appendChild(letter)
+        letter.querySelector("p").innerHTML = a
+    }
+}
+
+function drawArc(context, xPos, yPos, radius, startAngle, endAngle, anticlockwise, lineColor, fillColor, lineWidth) {
+    var startAngle = startAngle * (Math.PI / 180);
+    var endAngle = endAngle * (Math.PI / 180);
+    var radius = radius;
+    context.strokeStyle = lineColor;
+    context.fillStyle = fillColor;
+    context.lineWidth = lineWidth;
+    context.beginPath();
+    context.arc(xPos, yPos, radius, startAngle, endAngle, anticlockwise);
+    context.fill();
+    context.stroke();
+}
+
+newGame(question1, answer)
