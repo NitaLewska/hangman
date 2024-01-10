@@ -5,3 +5,46 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    display: grid;
+    min-height: 100vh;
+    background: linear-gradient(#00000062, transparent 1px),
+        linear-gradient(90deg, #00000062, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.hangman-game{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
+.gallows {
+    border: 1px solid red;
+    height: 90%;
+    width: 90%;
+}
+
+.quiz {
+    width: 80%;
+    border: 1px solid green;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.keyboard > button {
+    width: calc((100% - 8 * 10px)/9);
+    aspect-ratio: 1.5;
+    border: solid 1px grey;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    font-weight: 600;
+}
