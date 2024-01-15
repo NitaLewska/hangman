@@ -11,6 +11,8 @@ function createGameField() {
     game.appendChild(quiz)
 
     document.querySelector("body").appendChild(game)
+
+    createModal()
 }
 
 function createGallows() {
@@ -162,6 +164,11 @@ function newGame() {
         document.querySelector(".secret-word").appendChild(letter)
         letter.querySelector("p").innerHTML = " "
     }
+
+    document.addEventListener('keydown', checkLetterRealKeyboard, true)
+
+    let keys = document.querySelectorAll(".keyboard > button")
+    keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML, a)))
 }
 
 function drawArc(context, xPos, yPos, radius, startAngle, endAngle, anticlockwise, lineColor, fillColor, lineWidth) {
@@ -179,12 +186,8 @@ function drawArc(context, xPos, yPos, radius, startAngle, endAngle, anticlockwis
 
 newGame()
 
-let keys = document.querySelectorAll(".keyboard > button")
-keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML, a)))
-
 
 function checkLetter(letter, button) {
-    console.log('q')
     if (alphabet.toUpperCase().split('').indexOf(letter) != -1) {
         if (answer.split('').indexOf(letter) != -1) {
             document.querySelectorAll(".secret-word p").forEach((a, i) => {
@@ -198,26 +201,70 @@ function checkLetter(letter, button) {
             mistakes.innerHTML = `Incorrect guesses: ${mistakesCounter}/6`
             updateGallows()
         }
+        let keys = document.querySelectorAll(".keyboard > button")
         button ? button.disabled = true : keys.forEach((a) => {
             if (a.innerHTML === letter) {
                 a.disabled = true
             }
         })
     }
+    checkWin()
+    checkLose()
 }
 
-document.addEventListener('keydown', (e) => { checkLetter(e.key.toUpperCase()) })
-document.addEventListener("keydown", (e) => {
-    if (alphabet.toUpperCase().split('').indexOf(e.key.toUpperCase()) != -1) {
-        console.log('sdsd', e.key)
-        document.querySelectorAll(".keyboard > button").forEach((a) => {
-            if (a.innerHTML === e.key && a.disabled != true) {
-                a.classList.add('dfdf')
-            }
-        })
+function checkLetterRealKeyboard(e) {
+    checkLetter(e.key.toUpperCase())
+}
+
+function checkWin() {
+    let currentWord = ''
+    document.querySelectorAll(".secret-word p").forEach((a) => currentWord += a.innerHTML)
+    if (currentWord === answer) {
+        console.log('win')
+        showModal(true)
     }
-})
+}
 
-document.body.addEventListener("keyup", (e) => {
+function checkLose() {
+    if (mistakesCounter === 6) {
+        showModal(false)
+    }
+}
 
-})
+function createModal() {
+    console.log('sdf    ')
+    let modalContainer = document.createElement("div")
+    modalContainer.classList.add("modal-container")
+    let modal = document.createElement("div")
+    modal.classList.add("modal")
+
+    let modalMessage = document.createElement("p")
+    modalMessage.classList.add("modal-message")
+
+    let newGameButton = document.createElement("button")
+    newGameButton.classList.add("new-game")
+    newGameButton.innerHTML = "PLAY AGAIN"
+
+    modal.appendChild(modalMessage)
+    modal.appendChild(newGameButton)
+
+    modalContainer.appendChild(modal)
+    document.querySelector("body").appendChild(modalContainer)
+
+    modalContainer.classList.add('hidden')
+
+    document.querySelector(".new-game").addEventListener('click', () => {
+        console.log('lkj')
+        document.querySelector('body').innerHTML = ''
+        createGameField()
+        newGame()
+    })
+}
+
+
+function showModal(win) {
+    document.querySelector('.modal-message').innerHTML = win ? "Congratulations! You won!" : 'Game over. You lost'
+    document.querySelector('.modal-container').classList.remove('hidden')
+    document.removeEventListener('keydown', checkLetterRealKeyboard, true)
+    mistakesCounter = 0
+}
