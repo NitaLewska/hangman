@@ -85,6 +85,8 @@ function createGallows() {
     return gallows
 }
 
+const alphabet = "abcdefghijklmnopqrstuvwxyz"
+
 function createQuiz() {
     let quiz = document.createElement("div")
     quiz.classList.add("quiz")
@@ -92,7 +94,6 @@ function createQuiz() {
     let keyboard = document.createElement("div")
     keyboard.classList.add("keyboard")
 
-    const alphabet = "abcdefghijklmnopqrstuvwxyz"
     alphabet.toUpperCase().split("").map((a) => createButton(a))
 
     function createButton(a) {
@@ -127,7 +128,7 @@ function chooseQuestion() {
     }
     questionNumber = newNumber
     question = questions[Object.keys(questions)[questionNumber]]
-    answer = Object.keys(questions)[questionNumber]
+    answer = Object.keys(questions)[questionNumber].toUpperCase()
     console.log(question, answer)
     return
 }
@@ -162,13 +163,19 @@ function drawArc(context, xPos, yPos, radius, startAngle, endAngle, anticlockwis
 newGame()
 
 let keys = document.querySelectorAll(".keyboard > button")
-keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML)))
-function checkLetter(letter) {
-    if (answer.split('').indexOf(letter.toLowerCase()) != -1) {
+keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML, a)))
+
+
+function checkLetter(letter, button) {
+    console.log('q')
+    if (answer.split('').indexOf(letter) != -1) {
         document.querySelectorAll(".secret-word p").forEach((a, i) => {
-            if (answer.split('')[i] == letter.toLowerCase()) {
+            if (answer.split('')[i] == letter) {
                 a.innerHTML = letter
             }
         })
+        button.disabled = true
     }
 }
+
+document.addEventListener('keydown', (e) => {checkLetter(e.key.toUpperCase())})
