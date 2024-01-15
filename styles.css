@@ -8,6 +8,7 @@
 
 html {
     font-size: 1vw;
+    font-family: 'Tektur', sans-serif;
 }
 
 body {
@@ -187,6 +188,7 @@ body {
     border: none;
     font-size: 1.25rem;
     transition: all 400ms;
+    font-family: 'Tektur', sans-serif;
 }
 
 .win > .new-game:hover {
