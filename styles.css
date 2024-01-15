@@ -27,10 +27,14 @@ body {
 }
 
 @media (max-width: 801px) {
+    html {
+        font-size: 1vh;
+    }
+
     .hangman-game {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: calc(300vh/5) calc(200vh/5);
+        grid-template-rows: calc(200vh/5) calc(300vh/5);
         align-items: center;
         justify-items: center;
     }
@@ -60,11 +64,12 @@ body {
 .quiz {
     display: flex;
     flex-direction: column;
-    height: 60%;
+    height: 70%;
     width: 80%;
     /* border: 1px solid green; */
     justify-content: space-evenly;
     align-items: center;
+    font-size: 2rem;
 }
 
 @media (max-width: 801px) {
@@ -76,7 +81,7 @@ body {
 .secret-word {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .secret-word>div {
@@ -104,11 +109,11 @@ body {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .keyboard>button {
-    width: calc((100% - 8 * 10px)/9);
+    width: calc((100% - 8 * 0.625rem)/9);
     aspect-ratio: 1.4;
     border: solid 3px rgb(78, 78, 78);
     border-radius: 5px;
@@ -116,6 +121,13 @@ body {
     font-weight: 600;
     font-size: 1.5rem;
     color: black;
+}
+
+@media (max-width: 801px) {
+    .keyboard>button {
+        width: calc((100% - 6 * 0.625rem)/7);
+        font-size: 1.5rem;
+    }
 }
 
 .keyboard>button[disabled] {
