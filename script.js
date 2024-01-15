@@ -1,3 +1,5 @@
+import questions from "./questions.js"
+
 function createGameField() {
     let game = document.createElement("div")
     game.classList.add("hangman-game")
@@ -113,10 +115,25 @@ function createQuiz() {
 
 createGameField()
 
-let question1 = "What is the primary ingredient in guacamole?"
+let questionNumber = 0
+let question = "What is the primary ingredient in guacamole?"
 let answer = "avocado"
 
-function newGame(question, answer) {
+function chooseQuestion() {
+    let newNumber = Math.floor(Math.random()*Object.keys(questions).length)
+    console.log(newNumber)
+    if (newNumber === questionNumber) {
+        chooseQuestion()
+    }
+    questionNumber = newNumber
+    question = questions[Object.keys(questions)[questionNumber]]
+    answer = Object.keys(questions)[questionNumber]
+    console.log(question, answer)
+    return
+}
+
+function newGame() {
+    chooseQuestion()
     document.querySelector(".question").innerHTML = question
     answer.split('').map((a) => createLetter(a))
 
@@ -125,7 +142,7 @@ function newGame(question, answer) {
         letter.appendChild(document.createElement("p"))
 
         document.querySelector(".secret-word").appendChild(letter)
-        letter.querySelector("p").innerHTML = a
+        letter.querySelector("p").innerHTML = " "
     }
 }
 
@@ -142,7 +159,10 @@ function drawArc(context, xPos, yPos, radius, startAngle, endAngle, anticlockwis
     context.stroke();
 }
 
-newGame(question1, answer)keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML)))
+newGame()
+
+let keys = document.querySelectorAll(".keyboard > button")
+keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML)))
 function checkLetter(letter) {
     if (answer.split('').indexOf(letter.toLowerCase()) != -1) {
         document.querySelectorAll(".secret-word p").forEach((a, i) => {
