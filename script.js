@@ -142,4 +142,13 @@ function drawArc(context, xPos, yPos, radius, startAngle, endAngle, anticlockwis
     context.stroke();
 }
 
-newGame(question1, answer)
+newGame(question1, answer)keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML)))
+function checkLetter(letter) {
+    if (answer.split('').indexOf(letter.toLowerCase()) != -1) {
+        document.querySelectorAll(".secret-word p").forEach((a, i) => {
+            if (answer.split('')[i] == letter.toLowerCase()) {
+                a.innerHTML = letter
+            }
+        })
+    }
+}
