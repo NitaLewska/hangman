@@ -147,25 +147,26 @@ body {
 }
 
 .modal {
-    width: 30vw;
+    width: 40vw;
     aspect-ratio: 2;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     border-radius: 2rem;
-    border: 0.5rem solid black;
+    border: 0.25rem solid black;
     padding: 1rem 1rem;
-    background: url(./rain.gif) rgb(112, 112, 112);
+    background: url(./rain.gif), rgb(112, 112, 112);
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode:multiply;
-    background-position: center;
+    background-position: 50% 50%, center;
 }
 
 @media (max-width: 768px) {
     .modal {
         width: 90vw;
+        border: 0.5rem solid black;
     }
 }
 
@@ -176,6 +177,7 @@ body {
 .modal.win {
     background: url(./fireworks.gif) rgb(34, 34, 34);
     background-blend-mode:exclusion;
+    background-position: center center;
 }
 
 .new-game {
@@ -184,6 +186,19 @@ body {
     border-radius: 0.8rem;
     border: none;
     font-size: 1.25rem;
+    transition: all 400ms;
+}
+
+.win > .new-game:hover {
+    background-color: rgb(255, 248, 186);
+    color: black;
+    transform: translateY(-0.2rem);
+}
+
+.new-game:hover {
+    background-color: rgb(46, 46, 46);
+    color: white;
+    transform: translateY(-0.2rem);
 }
 
 .modal-message {
