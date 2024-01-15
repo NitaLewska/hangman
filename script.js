@@ -141,7 +141,6 @@ createGameField()
 
 function chooseQuestion() {
     let newNumber = Math.floor(Math.random() * Object.keys(questions).length)
-    console.log(newNumber)
     if (newNumber === questionNumber) {
         chooseQuestion()
     }
@@ -220,7 +219,6 @@ function checkWin() {
     let currentWord = ''
     document.querySelectorAll(".secret-word p").forEach((a) => currentWord += a.innerHTML)
     if (currentWord === answer) {
-        console.log('win')
         showModal(true)
     }
 }
@@ -232,7 +230,6 @@ function checkLose() {
 }
 
 function createModal() {
-    console.log('sdf    ')
     let modalContainer = document.createElement("div")
     modalContainer.classList.add("modal-container")
     let modal = document.createElement("div")
@@ -256,7 +253,6 @@ function createModal() {
 
     modalContainer.classList.add('hidden')
     document.querySelector(".new-game").addEventListener('click', () => {
-        console.log('lkj')
         document.querySelector('body').innerHTML = ''
         createGameField()
         newGame()
@@ -275,3 +271,5 @@ function showModal(win) {
     mistakesCounter = 0
     document.querySelector(".word").innerHTML = `The answer was: "${answer}"`
 }
+
+console.log("Не забудьте сменить раскладку на английскую! <3")
