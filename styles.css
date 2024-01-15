@@ -210,3 +210,8 @@ body {
     text-align: center;
     font-weight: 800;
 }
+
+.word {
+    color: white;
+    font-size: larger;
+}
