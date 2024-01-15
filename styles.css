@@ -116,7 +116,7 @@ body {
 .keyboard>button {
     width: calc((100% - 8 * 0.625rem)/9);
     aspect-ratio: 1.4;
-    border: solid 3px rgb(78, 78, 78);
+    border: solid 0.25rem rgb(78, 78, 78);
     border-radius: 5px;
     background: rgba(214, 111, 255, 0.253);
     font-weight: 600;

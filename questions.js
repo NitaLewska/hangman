@@ -15,7 +15,19 @@ let questions = {
     "Firefly": "Which insect is known for its ability to produce light through bioluminescence?",
     "Giraffe": "Which animal is known for its long neck and spots on its coat?",
     "Octopus": "Which sea creature is known for its eight arms and a beak?",
-    // "": "",
+    "Capybara": "What is the world’s largest rodent?",
+    "Darwin": "Which scientist is famous for his theory of evolution by natural selection?",
+    "Hindi": "What is the official language of India?",
+    "Russia": "Which country is the largest by land area in the world?",
+    "Thailand": "Which Southeast Asian country is known as the Land of Smiles?",
+    "Jordan": "In which country would you find the ancient city of Petra?",
+    "Japan": "Which country is known as the Land of the Rising Sun?",
+    "Cabbage": "What is the main ingredient of the Korean side dish, “kimchi”?",
+    "Baikal": "What is the largest lake in the world?",
+    "Mercury": "What chemical element is designated as “Hg”?",
+    "Baguette": "What is the most popular bread in France?",
+    "Brazil": "Which county is the biggest grower of coffee?",
+    "Chicago": "Which city is called the “City of Winds”?",
 }
 
 export default questions
