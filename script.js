@@ -240,7 +240,6 @@ function createModal() {
 
     let modalMessage = document.createElement("p")
     modalMessage.classList.add("modal-message")
-
     let newGameButton = document.createElement("button")
     newGameButton.classList.add("new-game")
     newGameButton.innerHTML = "PLAY AGAIN"
@@ -252,7 +251,6 @@ function createModal() {
     document.querySelector("body").appendChild(modalContainer)
 
     modalContainer.classList.add('hidden')
-
     document.querySelector(".new-game").addEventListener('click', () => {
         console.log('lkj')
         document.querySelector('body').innerHTML = ''
@@ -263,7 +261,12 @@ function createModal() {
 
 
 function showModal(win) {
-    document.querySelector('.modal-message').innerHTML = win ? "Congratulations! You won!" : 'Game over. You lost'
+    document.querySelector('.modal-message').innerHTML = win ? "Congratulations!<br/>You won!" : 'Game over<br/>You lost'
+    document.querySelector('.modal').classList.remove('win')
+    if (win) {
+
+        document.querySelector('.modal').classList.add('win')
+    }
     document.querySelector('.modal-container').classList.remove('hidden')
     document.removeEventListener('keydown', checkLetterRealKeyboard, true)
     mistakesCounter = 0

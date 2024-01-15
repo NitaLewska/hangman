@@ -143,17 +143,24 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.226);
+    background-color: rgba(0, 0, 0, 0.795);
 }
 
 .modal {
     width: 30vw;
     aspect-ratio: 2;
-    background-color: antiquewhite;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    border-radius: 2rem;
+    border: 0.5rem solid black;
+    padding: 1rem 1rem;
+    background: url(./rain.gif) rgb(112, 112, 112);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-position: center;
 }
 
 @media (max-width: 768px) {
@@ -164,4 +171,25 @@ body {
 
 .hidden {
     display: none;
+}
+
+.modal.win {
+    background: url(./fireworks.gif) rgb(34, 34, 34);
+    background-blend-mode:exclusion;
+}
+
+.new-game {
+    width: 50%;
+    aspect-ratio: 4;
+    border-radius: 0.8rem;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.modal-message {
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
 }
