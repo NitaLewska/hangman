@@ -138,7 +138,7 @@ createGameField()
 
 
 function chooseQuestion() {
-    let newNumber = Math.floor(Math.random()*Object.keys(questions).length)
+    let newNumber = Math.floor(Math.random() * Object.keys(questions).length)
     console.log(newNumber)
     if (newNumber === questionNumber) {
         chooseQuestion()
@@ -192,18 +192,32 @@ function checkLetter(letter, button) {
                     a.innerHTML = letter
                 }
             })
-            button ? button.disabled = true : keys.forEach((a) => {
-                if (a.innerHTML === letter) {
-                    a.disabled = true
-                }
-            })
         } else {
-        mistakesCounter++
-        let mistakes = document.querySelector('.mistakes')
-        mistakes.innerHTML = `Incorrect guesses: ${mistakesCounter}/6`
-        updateGallows()
+            mistakesCounter++
+            let mistakes = document.querySelector('.mistakes')
+            mistakes.innerHTML = `Incorrect guesses: ${mistakesCounter}/6`
+            updateGallows()
         }
+        button ? button.disabled = true : keys.forEach((a) => {
+            if (a.innerHTML === letter) {
+                a.disabled = true
+            }
+        })
     }
 }
 
-document.addEventListener('keydown', (e) => {checkLetter(e.key.toUpperCase())})
+document.addEventListener('keydown', (e) => { checkLetter(e.key.toUpperCase()) })
+document.addEventListener("keydown", (e) => {
+    if (alphabet.toUpperCase().split('').indexOf(e.key.toUpperCase()) != -1) {
+        console.log('sdsd', e.key)
+        document.querySelectorAll(".keyboard > button").forEach((a) => {
+            if (a.innerHTML === e.key && a.disabled != true) {
+                a.classList.add('dfdf')
+            }
+        })
+    }
+})
+
+document.body.addEventListener("keyup", (e) => {
+
+})

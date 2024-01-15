@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+html {
+    font-size: 1vw;
+}
+
 body {
     display: grid;
     min-height: 100vh;
@@ -14,12 +18,24 @@ body {
     background-size: 25px 25px;
 }
 
-.hangman-game{
+
+.hangman-game {
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
     justify-items: center;
 }
+
+@media (max-width: 801px) {
+    .hangman-game {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: calc(300vh/5) calc(200vh/5);
+        align-items: center;
+        justify-items: center;
+    }
+}
+
 .gallows {
     /* border: 1px solid red; */
     height: 90%;
@@ -29,9 +45,16 @@ body {
     align-items: center;
 }
 
-.gallows > canvas {
+.gallows>canvas {
     width: 100%;
     aspect-ratio: calc(5/7);
+}
+
+@media (max-width: 801px) {
+    .gallows>canvas {
+        width: auto;
+        height: 100%;
+    }
 }
 
 .quiz {
@@ -44,13 +67,19 @@ body {
     align-items: center;
 }
 
+@media (max-width: 801px) {
+    .quiz {
+        height: 100%;
+    }
+}
+
 .secret-word {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.secret-word > div {
+.secret-word>div {
     width: 3rem;
     height: 4rem;
     border-bottom: 5px solid black;
@@ -59,7 +88,7 @@ body {
     align-items: center;
 }
 
-.secret-word > div > p {
+.secret-word>div>p {
     font-size: 3rem;
 }
 
@@ -74,15 +103,22 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
 }
 
-.keyboard > button {
+.keyboard>button {
     width: calc((100% - 8 * 10px)/9);
-    aspect-ratio: 1.5;
-    border: solid 1px grey;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    aspect-ratio: 1.4;
+    border: solid 3px rgb(78, 78, 78);
+    border-radius: 5px;
+    background: rgba(214, 111, 255, 0.253);
     font-weight: 600;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.keyboard>button[disabled] {
+    background-color: transparent;
+    opacity: 0.4;
 }
