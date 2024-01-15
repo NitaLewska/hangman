@@ -86,6 +86,10 @@ function createGallows() {
 }
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
+let questionNumber = 0
+let question = "What is the primary ingredient in guacamole?"
+let answer = "avocado"
+let mistakesCounter = 0
 
 function createQuiz() {
     let quiz = document.createElement("div")
@@ -108,17 +112,19 @@ function createQuiz() {
     let question = document.createElement("div")
     question.classList.add("question")
 
+    let mistakes = document.createElement("p")
+    mistakes.innerHTML = `Incorrect guesses: ${mistakesCounter}/6`
+    mistakes.classList.add("mistakes")
+
     quiz.appendChild(secretWord)
     quiz.appendChild(question)
+    quiz.appendChild(mistakes)
     quiz.appendChild(keyboard)
     return quiz
 }
 
 createGameField()
 
-let questionNumber = 0
-let question = "What is the primary ingredient in guacamole?"
-let answer = "avocado"
 
 function chooseQuestion() {
     let newNumber = Math.floor(Math.random()*Object.keys(questions).length)
@@ -168,13 +174,23 @@ keys.forEach((a) => a.addEventListener('click', () => checkLetter(a.innerHTML, a
 
 function checkLetter(letter, button) {
     console.log('q')
-    if (answer.split('').indexOf(letter) != -1) {
-        document.querySelectorAll(".secret-word p").forEach((a, i) => {
-            if (answer.split('')[i] == letter) {
-                a.innerHTML = letter
-            }
-        })
-        button.disabled = true
+    if (alphabet.toUpperCase().split('').indexOf(letter) != -1) {
+        if (answer.split('').indexOf(letter) != -1) {
+            document.querySelectorAll(".secret-word p").forEach((a, i) => {
+                if (answer.split('')[i] == letter) {
+                    a.innerHTML = letter
+                }
+            })
+            button ? button.disabled = true : keys.forEach((a) => {
+                if (a.innerHTML === letter) {
+                    a.disabled = true
+                }
+            })
+        } else {
+        mistakesCounter++
+        let mistakes = document.querySelector('.mistakes')
+        mistakes.innerHTML = `Incorrect guesses: ${mistakesCounter}/6`
+        }
     }
 }
 
