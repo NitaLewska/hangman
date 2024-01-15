@@ -43,46 +43,57 @@ function createGallows() {
     rect5.fillRect(100, -70, 15, 100);
     rect5.rotate(-45 * Math.PI / 180)
 
-    let head = canvas.getContext("2d");
-    drawArc(head, 362.5, 180, 60, 0, 360, false, "black", "transparent", 10)
-
-    let body = canvas.getContext("2d");
-    body.fillStyle = "black";
-    body.fillRect(357.5, 240, 10, 180);
-
-    let leftHand = canvas.getContext("2d");
-    leftHand.fillStyle = "black";
-    leftHand.translate(357, 270);
-    leftHand.rotate(30 * Math.PI / 180);
-    leftHand.fillRect(0, 0, 10, 150);
-    leftHand.rotate(-30 * Math.PI / 180);
-    leftHand.translate(-357, -270);
-
-    let rightHand = canvas.getContext("2d");
-    rightHand.fillStyle = "black";
-    rightHand.translate(357, 270);
-    rightHand.rotate(-30 * Math.PI / 180);
-    rightHand.fillRect(0, 0, 10, 150);
-    rightHand.rotate(30 * Math.PI / 180);
-    rightHand.translate(-357, -270);
-
-    let leftLeg = canvas.getContext("2d");
-    leftLeg.fillStyle = "black";
-    leftLeg.translate(357, 415);
-    leftLeg.rotate(30 * Math.PI / 180);
-    leftLeg.fillRect(0, 0, 10, 150);
-    leftLeg.rotate(-30 * Math.PI / 180);
-    leftLeg.translate(-357, -415);
-
-    let rightLeg = canvas.getContext("2d");
-    rightLeg.fillStyle = "black";
-    rightLeg.translate(357, 415);
-    rightLeg.rotate(-30 * Math.PI / 180);
-    rightLeg.fillRect(0, 0, 10, 150);
-    rightLeg.rotate(-30 * Math.PI / 180);
-    rightLeg.translate(-357, -415);
-
     return gallows
+}
+
+function updateGallows() {
+    let canvas = document.querySelector(".gallows > canvas")
+
+    if (mistakesCounter > 0) {
+        let head = canvas.getContext("2d");
+        drawArc(head, 362.5, 180, 60, 0, 360, false, "black", "transparent", 10)
+    }
+    if (mistakesCounter > 1) {
+        let body = canvas.getContext("2d");
+        body.fillStyle = "black";
+        body.fillRect(357.5, 240, 10, 180);
+    }
+    if (mistakesCounter > 2) {
+        let leftHand = canvas.getContext("2d");
+        leftHand.fillStyle = "black";
+        leftHand.translate(357, 270);
+        leftHand.rotate(30 * Math.PI / 180);
+        leftHand.fillRect(0, 0, 10, 150);
+        leftHand.rotate(-30 * Math.PI / 180);
+        leftHand.translate(-357, -270);
+    }
+    if (mistakesCounter > 3) {
+        let rightHand = canvas.getContext("2d");
+        rightHand.fillStyle = "black";
+        rightHand.translate(357, 270);
+        rightHand.rotate(-30 * Math.PI / 180);
+        rightHand.fillRect(0, 0, 10, 150);
+        rightHand.rotate(30 * Math.PI / 180);
+        rightHand.translate(-357, -270);
+    }
+    if (mistakesCounter > 4) {
+        let leftLeg = canvas.getContext("2d");
+        leftLeg.fillStyle = "black";
+        leftLeg.translate(357, 415);
+        leftLeg.rotate(30 * Math.PI / 180);
+        leftLeg.fillRect(0, 0, 10, 150);
+        leftLeg.rotate(-30 * Math.PI / 180);
+        leftLeg.translate(-357, -415);
+    }
+    if (mistakesCounter > 5) {
+        let rightLeg = canvas.getContext("2d");
+        rightLeg.fillStyle = "black";
+        rightLeg.translate(357, 415);
+        rightLeg.rotate(-30 * Math.PI / 180);
+        rightLeg.fillRect(0, 0, 10, 150);
+        rightLeg.rotate(-30 * Math.PI / 180);
+        rightLeg.translate(-357, -415);
+    }
 }
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -190,6 +201,7 @@ function checkLetter(letter, button) {
         mistakesCounter++
         let mistakes = document.querySelector('.mistakes')
         mistakes.innerHTML = `Incorrect guesses: ${mistakesCounter}/6`
+        updateGallows()
         }
     }
 }
