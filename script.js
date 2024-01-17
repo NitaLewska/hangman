@@ -212,7 +212,16 @@ function checkLetter(letter, button) {
 }
 
 function checkLetterRealKeyboard(e) {
-    checkLetter(e.key.toUpperCase())
+    let keys = Array.from(document.querySelectorAll(".keyboard > button"))
+    let disabled = false
+    for (let i=0; i<keys.length; i++) {
+        if (keys[i].innerHTML === e.key.toUpperCase() && keys[i].disabled === true) {
+            disabled = true
+        }
+    }
+    if (!disabled) {
+        checkLetter(e.key.toUpperCase())
+    }
 }
 
 function checkWin() {
