@@ -1,0 +1,217 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 1vw;
+    font-family: 'Tektur', sans-serif;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    background: linear-gradient(#0000002a, transparent 1px),
+        linear-gradient(90deg, #0000002a, transparent 1px);
+    background-size: 25px 25px;
+}
+
+
+.hangman-game {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 1vh;
+    }
+
+    .hangman-game {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: calc(200vh/5) calc(300vh/5);
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+.gallows {
+    /* border: 1px solid red; */
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallows>canvas {
+    width: 100%;
+    aspect-ratio: calc(5/7);
+}
+
+@media (max-width: 768px) {
+    .gallows>canvas {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 80%;
+    /* border: 1px solid green; */
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .quiz {
+        height: 100%;
+    }
+}
+
+.secret-word {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+}
+
+.secret-word>div {
+    width: 3rem;
+    height: 4rem;
+    border-bottom: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secret-word>div>p {
+    font-size: 3rem;
+}
+
+.question {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 0.625rem;
+}
+
+.keyboard>button {
+    width: calc((100% - 8 * 0.625rem)/9);
+    aspect-ratio: 1.4;
+    border: solid 0.25rem rgb(78, 78, 78);
+    border-radius: 5px;
+    background: rgba(214, 111, 255, 0.253);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .keyboard>button {
+        width: calc((100% - 6 * 0.625rem)/7);
+        font-size: 1.5rem;
+    }
+}
+
+.keyboard>button[disabled] {
+    background-color: transparent;
+    opacity: 0.4;
+}
+
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.795);
+}
+
+.modal {
+    width: 40vw;
+    aspect-ratio: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2rem;
+    border: 0.25rem solid black;
+    padding: 1rem 1rem;
+    background: url(./rain.gif), rgb(112, 112, 112);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-position: 50% 50%, center;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 90vw;
+        border: 0.5rem solid black;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.modal.win {
+    background: url(./fireworks.gif) rgb(34, 34, 34);
+    background-blend-mode:exclusion;
+    background-position: center center;
+}
+
+.new-game {
+    width: 50%;
+    aspect-ratio: 4;
+    border-radius: 0.8rem;
+    border: none;
+    font-size: 1.25rem;
+    transition: all 400ms;
+    font-family: 'Tektur', sans-serif;
+}
+
+.win > .new-game:hover {
+    background-color: rgb(255, 248, 186);
+    color: black;
+    transform: translateY(-0.2rem);
+}
+
+.new-game:hover {
+    background-color: rgb(46, 46, 46);
+    color: white;
+    transform: translateY(-0.2rem);
+}
+
+.modal-message {
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+}
+
+.word {
+    color: white;
+    font-size: larger;
+}
